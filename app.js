@@ -35,27 +35,32 @@ var list1 = [
 // Event listener for drop down menu of clients. 
 let dr_id = 0;
 doctorSelected.addEventListener('change', function(){
+   
     // sets user selection
     dr_id = parseInt(this.value); 
     for(let i in list1){
         if(dr_id === list1[i].id){
+           
             let dr_name = document.createElement('p');
             dr_name.classList.add("title");
             doctor_name.append(dr_name);
             dr_name.setAttribute('id', 'nameId');
             document.getElementById('nameId').innerText = list1[i].name
+           
             // creates elements by specialty
             let doctor_specialty = document.createElement('p');
             doctor_specialty.classList.add("subtitle");
             doctor_name.append(doctor_specialty);
             doctor_specialty.setAttribute('id', 'specialtyId');
             document.getElementById('specialtyId').innerText = `Specialty: ${list1[i].specialty}`
+           
             // creates elements by Location
             let doctor_location = document.createElement('p');
             doctor_location.classList.add("subtitle");
             doctor_name.append(doctor_location);
             doctor_location.setAttribute('id', 'locationId');
             document.getElementById('locationId').innerText = `Location: ${list1[i].location}`
+            
             // creates elements by reviewScore
             let reviewScore = document.createElement('p');
             reviewScore.classList.add("subtitle");
@@ -78,7 +83,7 @@ doctorSelected.addEventListener('change', function(){
     }   
 })
 
-// removes items from list 
+// Clears out List of "Other Similar Doctors" on click
 doctorSelected.addEventListener('click', function(){
     const parent = document.getElementById("similar_list")
             while (parent.firstChild) {
