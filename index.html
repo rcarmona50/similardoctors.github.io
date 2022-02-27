@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bulma Import -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
     <link rel="stylesheet" href="style.css">
@@ -14,62 +15,63 @@
     <section class="section">
         <div class="container">
             <div class="content is-large">
-              <section class="hero is-primary">
-                <div class="hero-body">
-                  <p class="title">
-                    <h1>Similar Doctors App</h1>
-                  </p>
-                  <p class="subtitle">
-                    Select a doctor. See results with doctors in same state and specialty.
-                  </p>
+                <!-- Top half of App Header -->
+                <section class="hero is-primary">
+                    <div class="hero-body">
+                        <p class="title">
+                            <h1>Similar Doctors App</h1>
+                        </p>
+                        <p class="subtitle">
+                            Select a doctor. See results with doctors in same state and specialty.
+                        </p>
+                    </div>
+                </section>
+                <div class="gap">
+                    <label for="playto" class="label is-large is-inline"> Select a doctor:</label> 
+                    <div id="playto1" class="select is-rounded">
+                        <select name="" id="select-doctor">
+                            <option value="">Select</option>
+                            <option value="0">Dr. Mark Sanchez DO</option>
+                            <option value="1">Dr. Troy Aikmen MD</option>
+                            <option value="2">Dr. Tom Brady MD</option>
+                            <option value="3">Dr. Kurt Warner MD</option>
+                            <option value="4">Dr. Lamar Jackson MD</option>
+                            <option value="5">Dr. Joe Montana DO</option>
+                            <option value="6">Dr. Kyler Murray MD</option>
+                            <option value="7">Dr. Cam Newton MD</option>
+                            <option value="8">Dr. John Elway MD</option>
+                            <option value="9">Dr. Carson Palmer DO</option>
+                            <option value="10">Dr. Joe Flacco DO</option>
+                            <option value="11">Dr. Eli Manning MD</option>
+                            <option value="12">Dr. Dak Prescott MD</option>
+                            <option value="13">Dr. Jimmy G MD</option>
+                            <option value="14">Dr. Peyton Manning MD</option>
+                            <option value="15">Dr. Matt Stafford DO</option>
+                            <option value="16">Dr. Steve Young MD</option>
+                            <option value="17">Dr. Joe Burrow MD</option>
+                            <option value="18">Dr. Justin Herbert MD</option>
+                            <option value="19">Dr. Tim Fury MD</option>
+                            <option value="20">Dr. Rookie Johnson MD</option>
+                        </select>
+                    </div>
                 </div>
-              </section>
-            <div class="gap">
-            <label for="playto" class="label is-large is-inline"> Select a doctor:</label> 
-            <div id="playto1" class="select is-rounded">
-              <select name="" id="select-doctor">
-                <option value="">Select</option>
-                <option value="0">Dr. Mark Sanchez DO</option>
-                <option value="1">Dr. Troy Aikmen MD</option>
-                <option value="2">Dr. Tom Brady MD</option>
-                <option value="3">Dr. Kurt Warner MD</option>
-                <option value="4">Dr. Lamar Jackson MD</option>
-                <option value="5">Dr. Joe Montana DO</option>
-                <option value="6">Dr. Kyler Murray MD</option>
-                <option value="7">Dr. Cam Newton MD</option>
-                <option value="8">Dr. John Elway MD</option>
-                <option value="9">Dr. Carson Palmer DO</option>
-                <option value="10">Dr. Joe Flacco DO</option>
-                <option value="11">Dr. Eli Manning MD</option>
-                <option value="12">Dr. Dak Prescott MD</option>
-                <option value="13">Dr. Jimmy G MD</option>
-                <option value="14">Dr. Peyton Manning MD</option>
-                <option value="15">Dr. Matt Stafford DO</option>
-                <option value="16">Dr. Steve Young MD</option>
-                <option value="17">Dr. Joe Burrow MD</option>
-                <option value="18">Dr. Justin Herbert MD</option>
-                <option value="19">Dr. Tim Fury MD</option>
-                <option value="20">Dr. Rookie Johnson MD</option>
-              </select>
-            </div>
-          </div>
-            <div class="card ">
-                <div class="card-content ">
+                <!-- Doctor Content - Items Added by JS -->
+                <div class="card ">
+                    <div class="card-content ">
+                    </div>
+                    <footer class="card-footer"></footer>
                 </div>
-
-                <footer class="card-footer">
-                </footer>
-
-              </div>
+                </div>
+                    <!-- Other Doctors Content - Items Added by JS -->
+                    <h2>Other Similar Doctors</h2>
+                    <div class="content" >
+                        <ol type="1" id="similar_list"></ol>
+                    
+                </div>
         </div>
-        <h2>Other Similar Doctors</h2>
-        <div class="content" >
-            <ol type="1" id="similar_list">
-            </ol>
-          </div>
-    </div>
     </section> 
-     
+
+    
 <script src="app.js"></script>
 </body>
 

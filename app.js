@@ -1,8 +1,12 @@
+// Author: Rafael Carmona
+// Description: For Allscript
+
 const dropdown = document.querySelector('.dropdown');
 const doctorSelected = document.querySelector("#select-doctor");
 const doctor_name = document.querySelector(".card-content")
 const similar_doctor = document.querySelector("#similar_list")
 
+// Haven't learnd about working with data/databases so made my own here. I know this is not the right way to do it. But got the job done for the most part :)
 var list1 = [
 {id: 0, name: 'Dr. Mark Sanchez DO',  specialty: "Family medicine", location: "New York", reviewScore: 1.9},
 {id: 1, name: 'Dr. Troy Aikmen MD', specialty: "Pediatrics", location: "Dallas", reviewScore: 5.0},
@@ -27,9 +31,11 @@ var list1 = [
 {id: 20, name: 'Dr. Rookie Johnson MD', specialty: "Internal medicine", location: "Tampa", reviewScore: 4.8},
 ];
 
-let dr_id = 0;
 
+// Event listener for drop down menu of clients. 
+let dr_id = 0;
 doctorSelected.addEventListener('change', function(){
+    // sets user selection
     dr_id = parseInt(this.value); 
     for(let i in list1){
         if(dr_id === list1[i].id){
@@ -38,19 +44,19 @@ doctorSelected.addEventListener('change', function(){
             doctor_name.append(dr_name);
             dr_name.setAttribute('id', 'nameId');
             document.getElementById('nameId').innerText = list1[i].name
-
+            // creates elements by specialty
             let doctor_specialty = document.createElement('p');
             doctor_specialty.classList.add("subtitle");
             doctor_name.append(doctor_specialty);
             doctor_specialty.setAttribute('id', 'specialtyId');
             document.getElementById('specialtyId').innerText = `Specialty: ${list1[i].specialty}`
-
+            // creates elements by Location
             let doctor_location = document.createElement('p');
             doctor_location.classList.add("subtitle");
             doctor_name.append(doctor_location);
             doctor_location.setAttribute('id', 'locationId');
             document.getElementById('locationId').innerText = `Location: ${list1[i].location}`
-
+            // creates elements by reviewScore
             let reviewScore = document.createElement('p');
             reviewScore.classList.add("subtitle");
             doctor_name.append(reviewScore);
@@ -60,7 +66,7 @@ doctorSelected.addEventListener('change', function(){
     }
 })
 
-
+// another Event listner = adds similar doctors based on the same location and specialty. 
 doctorSelected.addEventListener('change', function(){
    let location_similarity = list1[dr_id].location
     for(let x in list1){
@@ -72,6 +78,7 @@ doctorSelected.addEventListener('change', function(){
     }   
 })
 
+// removes items from list 
 doctorSelected.addEventListener('click', function(){
     const parent = document.getElementById("similar_list")
             while (parent.firstChild) {
