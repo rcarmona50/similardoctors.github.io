@@ -1,3 +1,4 @@
 # SimilarDoctorsApp
 
-App for Allscripts Intern Interview. 
+Website: similardoctors.github.io
+
